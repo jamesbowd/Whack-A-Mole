@@ -1,7 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 .square {
-  width: 200px;
-  height: 200px;
+  width: 9vw;
+  height: 9vw;
   border: solid black 1px;
+  border-radius: 5px;
+  margin: 2px;
 }
 
 .grid {
@@ -9,10 +15,35 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  width: 618px;
+  width: 50vw;
+  margin: 0 auto;
 }
 
 .mole {
   background-image: url("/images/mole.png");
   background-size: cover;
+  cursor: pointer;
+  background-color: red;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+.grid-size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  width: 50vw;
+}
+
+.btn {
+  margin: 0 3vw;
+  padding: 0.8vw 2vw;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }

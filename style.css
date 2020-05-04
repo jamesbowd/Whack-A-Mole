@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #7BD4D0;
+}
+
 .square {
   width: 9vw;
   height: 9vw;
@@ -23,7 +27,7 @@
   background-image: url("/images/mole.png");
   background-size: cover;
   cursor: pointer;
-  background-color: red;
+  background-color: #A37BD4;
 }
 
 h1,

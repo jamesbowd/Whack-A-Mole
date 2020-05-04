@@ -6,9 +6,10 @@ const gridSize = document.querySelectorAll(".grid-size-btn");
 
 let squares;
 let square;
+let currentTime;
+let randomTime;
 
 let result = 0;
-let currentTime = timeLeft.textContent;
 
 let timerID = null;
 
@@ -19,7 +20,9 @@ for (const button of gridSize) {
 function init() {
   grid.innerHTML = "";
   score.textContent = "0";
-  timeLeft.textContent = "60";
+  timeLeft.textContent = "10";
+  currentTime = 10;
+  randomTime = 10;
 }
 
 function setGridSize() {
@@ -54,12 +57,16 @@ function createBoard() {
 }
 
 function randomSquare() {
+  randomTime--;
   square.forEach((className) => {
     className.classList.remove("mole");
   });
   let randomPosition = square[Math.floor(Math.random() * squares)];
   randomPosition.classList.add("mole");
   hitPosition = randomPosition.id;
+  if (randomTime === 0) {
+    clearInterval(randomID);
+  }
 }
 
 function click() {
@@ -75,11 +82,12 @@ function click() {
 
 function moveMole() {
   //let timerID = null;
-  timerID = setInterval(randomSquare, 1000);
+  
   timerID = setInterval(countDown, 1000);
+  randomID = setInterval(randomSquare, 1000);
 }
 
-function countDown() {
+function countDown() {  
   currentTime--;
   timeLeft.textContent = currentTime;
 
@@ -87,5 +95,3 @@ function countDown() {
     clearInterval(timerID);
   }
 }
-
-//timerID = setInterval(countDown, 1000);
